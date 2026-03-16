@@ -11,7 +11,7 @@
             padding: 0;
             background-color: #f5f5f5;
         }
-        
+
         header {
             background-color: #003366;
             color: white;
@@ -27,12 +27,24 @@
         nav {
             background-color: #004d99;
             padding: 1rem;
+            text-align: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 1rem;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover { opacity: 0.75; }
+
+        /* Highlight the AI Solutions link */
+        nav a.ai-link {
+            background-color: rgba(0,204,255,0.2);
+            border: 1px solid rgba(0,204,255,0.5);
+            border-radius: 4px;
+            padding: 0.2rem 0.7rem;
         }
 
         .container {
@@ -76,6 +88,38 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
+        /* AI teaser banner */
+        .ai-teaser {
+            background: linear-gradient(135deg, #003366 0%, #0077e6 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: 0 4px 12px rgba(0,51,102,0.3);
+        }
+
+        .ai-teaser-text h3 { margin: 0 0 0.4rem; font-size: 1.3rem; }
+        .ai-teaser-text p  { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+
+        .ai-teaser a {
+            display: inline-block;
+            background-color: white;
+            color: #003366;
+            padding: 0.65rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+        }
+
+        .ai-teaser a:hover { background-color: #e0eaff; }
+
         footer {
             background-color: #003366;
             color: white;
@@ -99,12 +143,23 @@
         <a href="#services">Services</a>
         <a href="#blog">Blog</a>
         <a href="#about">About</a>
+        <a href="ai-solutions.html" class="ai-link">AI Solutions</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="container">
         <section id="services">
             <h2>Our Services</h2>
+
+            <!-- AI Teaser Banner -->
+            <div class="ai-teaser">
+                <div class="ai-teaser-text">
+                    <h3>&#x1F916; Now Offering AI Agent &amp; App Development</h3>
+                    <p>Custom AI agents, LLM integration, voice assistants, and our VPS-hosted OpenClaw AI service.</p>
+                </div>
+                <a href="ai-solutions.html">Explore AI Solutions &rarr;</a>
+            </div>
+
             <div class="services">
                 <div class="service-card">
                     <h3>Automation Services</h3>
@@ -115,7 +170,7 @@
                     <p>Complex workflow management and service orchestration.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Monitoring & Assurance</h3>
+                    <h3>Monitoring &amp; Assurance</h3>
                     <p>Comprehensive monitoring and service assurance solutions.</p>
                 </div>
             </div>
@@ -123,7 +178,7 @@
 
         <section id="about" class="about-section">
             <h2>About Us</h2>
-            <p>Blue Fog Technology specializes in providing consultancy services for Automation, Assurance, Monitoring & Orchestration of Service Provider's edge and core cloud. We help service providers optimize their operations and deliver exceptional services to their customers.</p>
+            <p>Blue Fog Technology specializes in providing consultancy services for Automation, Assurance, Monitoring &amp; Orchestration of Service Provider's edge and core cloud. We help service providers optimize their operations and deliver exceptional services to their customers.</p>
             <div class="expertise-areas">
                 <h3>Our Expertise:</h3>
                 <ul>
@@ -133,6 +188,7 @@
                     <li>Quality Assurance Systems</li>
                     <li>Edge Computing Integration</li>
                     <li>Core Cloud Operations</li>
+                    <li>AI Agent &amp; App Development</li>
                 </ul>
             </div>
         </section>
@@ -181,13 +237,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2023 Blue Fog Technology. All rights reserved.</p>
+        <p>&copy; 2025 Blue Fog Technology. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
-
-
-
-
-

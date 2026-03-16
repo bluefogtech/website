@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Solutions &amp; App Development | Blue Fog Technology</title>
+    <meta name="description" content="Blue Fog Technology delivers cutting-edge AI agent development, custom app development, LLM integration, and VPS-hosted intelligent services including OpenClaw AI Assistant.">
+    <style>
+        /* ── Base ─────────────────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* ── Header ───────────────────────────────────────────────── */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+
+        header h1 { margin: 0.25rem 0; font-size: 2rem; }
+        header p  { margin: 0.25rem 0; font-size: 1rem; opacity: 0.9; }
+
+        /* ── Navigation ───────────────────────────────────────────── */
+        nav {
+            background-color: #004d99;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover { opacity: 0.75; }
+        nav a.active { border-bottom: 2px solid #00ccff; padding-bottom: 2px; }
+
+        /* ── Hero Banner ──────────────────────────────────────────── */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #005cbf 60%, #0077e6 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin: 0 0 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.92;
+            line-height: 1.7;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 30px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+
+        /* ── Container ────────────────────────────────────────────── */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* ── Section headings ─────────────────────────────────────── */
+        .section-title {
+            color: #003366;
+            font-size: 1.7rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-subtitle {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ── Service Cards Grid ───────────────────────────────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+            border-top: 4px solid #004d99;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+        }
+
+        .service-card .icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card h3 {
+            color: #003366;
+            margin: 0 0 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── Featured App Section ─────────────────────────────────── */
+        .featured-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+            margin: 2.5rem 0;
+            overflow: hidden;
+        }
+
+        .featured-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        @media (max-width: 700px) {
+            .featured-inner { grid-template-columns: 1fr; }
+        }
+
+        .featured-text {
+            padding: 2.5rem;
+        }
+
+        .featured-text .app-badge {
+            display: inline-block;
+            background-color: #e8f0fe;
+            color: #004d99;
+            border-radius: 20px;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .featured-text h3 {
+            color: #003366;
+            font-size: 1.6rem;
+            margin: 0 0 1rem;
+        }
+
+        .featured-text p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .featured-text ul {
+            color: #555;
+            padding-left: 1.2rem;
+            line-height: 1.9;
+            margin: 0 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #004d99;
+            color: white;
+            padding: 0.7rem 1.6rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover { background-color: #003366; }
+
+        .featured-visual {
+            background: linear-gradient(160deg, #1a0a00 0%, #3d1f00 50%, #5c3000 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem;
+            text-align: center;
+            min-height: 280px;
+        }
+
+        .featured-visual .app-symbol {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-visual h4 {
+            color: #f0c060;
+            font-size: 1.4rem;
+            margin: 0 0 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .featured-visual p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .feature-tag {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.85);
+            border-radius: 20px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.78rem;
+        }
+
+        /* ── OpenClaw Section ─────────────────────────────────────── */
+        .openclaw-section {
+            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            color: white;
+        }
+
+        .openclaw-section .oc-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 20px;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .openclaw-section h3 {
+            font-size: 1.7rem;
+            margin: 0 0 0.8rem;
+        }
+
+        .openclaw-section > p {
+            opacity: 0.9;
+            line-height: 1.7;
+            max-width: 750px;
+            margin-bottom: 2rem;
+        }
+
+        .oc-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .oc-feature {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 1.2rem;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .oc-feature .oc-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .oc-feature h4 {
+            margin: 0 0 0.4rem;
+            font-size: 1rem;
+        }
+
+        .oc-feature p {
+            margin: 0;
+            font-size: 0.88rem;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        .vps-note {
+            margin-top: 1.8rem;
+            background: rgba(0,204,255,0.12);
+            border-left: 4px solid #00ccff;
+            border-radius: 0 6px 6px 0;
+            padding: 1rem 1.2rem;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .vps-note strong { color: #7dd8ff; }
+
+        /* ── Why Choose Us ────────────────────────────────────────── */
+        .why-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 1.2rem;
+        }
+
+        .why-item .why-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .why-item h4 {
+            color: #003366;
+            margin: 0 0 0.4rem;
+            font-size: 1rem;
+        }
+
+        .why-item p {
+            color: #666;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── CTA Strip ────────────────────────────────────────────── */
+        .cta-strip {
+            background: linear-gradient(90deg, #003366, #0077e6);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            margin: 2.5rem 0;
+        }
+
+        .cta-strip h3 { font-size: 1.6rem; margin: 0 0 0.6rem; }
+        .cta-strip p  { opacity: 0.9; margin: 0 0 1.5rem; font-size: 1rem; }
+
+        .btn-white {
+            display: inline-block;
+            background-color: white;
+            color: #003366;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn-white:hover { background-color: #e0eaff; }
+
+        /* ── Footer ───────────────────────────────────────────────── */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* ── Responsive tweaks ────────────────────────────────────── */
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 1.5rem; }
+            nav a    { margin: 0 0.5rem; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Header ───────────────────────────────────────────────── -->
+    <header>
+        <img src="bluefog.png" alt="Blue Fog Technology Logo" class="logo">
+        <h1>Blue Fog Technology</h1>
+        <p>Expert Consultancy for Service Providers</p>
+    </header>
+
+    <!-- ── Navigation ───────────────────────────────────────────── -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#about">About</a>
+        <a href="ai-solutions.html" class="active">AI Solutions</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <!-- ── Hero ─────────────────────────────────────────────────── -->
+    <div class="hero">
+        <div class="hero-badge">New &mdash; 2025</div>
+        <h2>AI Agents &amp; Intelligent App Development</h2>
+        <p>Blue Fog Technology now delivers end-to-end AI-powered solutions — from custom intelligent agents and LLM-integrated applications to VPS-hosted AI services that run 24/7 for your business.</p>
+    </div>
+
+    <!-- ── Main Content ──────────────────────────────────────────── -->
+    <div class="container">
+
+        <!-- AI Services Grid -->
+        <section id="ai-services">
+            <h2 class="section-title">Our AI &amp; App Development Services</h2>
+            <p class="section-subtitle">Practical, production-ready AI solutions tailored to your business needs.</p>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="icon">🤖</div>
+                    <h3>Custom AI Agent Development</h3>
+                    <p>We design and build autonomous AI agents that can reason, plan, and execute multi-step tasks — from data retrieval and analysis to automated decision-making and customer interaction.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🧠</div>
+                    <h3>LLM Integration</h3>
+                    <p>Seamlessly integrate large language models (GPT-4, Gemini, Claude, Mistral and more) into your existing platforms, workflows, and enterprise systems for intelligent text, code, and data processing.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">💬</div>
+                    <h3>Chatbot &amp; Conversational AI</h3>
+                    <p>Deploy context-aware, multi-turn chatbots for customer support, internal helpdesks, and knowledge bases. Built with retrieval-augmented generation (RAG) for accurate, grounded responses.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🎙️</div>
+                    <h3>Voice Assistant Development</h3>
+                    <p>Build natural-language voice interfaces powered by AI speech-to-text and text-to-speech pipelines. Ideal for hands-free reminders, scheduling, and operational commands.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">⚙️</div>
+                    <h3>AI-Powered Workflow Automation</h3>
+                    <p>Extend your existing automation and orchestration infrastructure with AI decision layers — enabling intelligent routing, anomaly detection, and self-healing workflows.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">📱</div>
+                    <h3>Web &amp; Mobile App Development</h3>
+                    <p>Full-stack development of AI-first web and mobile applications — from concept and design through to deployment on cloud or VPS infrastructure, with ongoing support.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── Featured App: DharmaScroll ───────────────────────── -->
+        <section id="dharmascroll">
+            <h2 class="section-title" style="margin-top:2.5rem;">Featured Work</h2>
+            <p class="section-subtitle">A showcase of AI-powered applications built by Blue Fog Technology.</p>
+
+            <div class="featured-section">
+                <div class="featured-inner">
+
+                    <div class="featured-text">
+                        <span class="app-badge">Live App &mdash; AI Powered</span>
+                        <h3>DharmaScroll</h3>
+                        <p>DharmaScroll is a spiritually immersive web application that delivers daily wisdom from Indian scriptures — including the Bhagavad Gita — powered by OpenAI GPT and Google Gemini AI models.</p>
+                        <p>The app uses AI to generate thoughtful, contextually accurate translations and reflections from ancient Sanskrit texts, making timeless wisdom accessible to a modern audience.</p>
+                        <ul>
+                            <li>AI-generated translations using GPT-4 &amp; Gemini</li>
+                            <li>Daily spiritual quote discovery engine</li>
+                            <li>Verse-by-verse Bhagavad Gita study mode</li>
+                            <li>Aarti &amp; Bhajan collection (coming soon)</li>
+                            <li>Responsive, mobile-first design</li>
+                        </ul>
+                        <a href="https://www.dharmascroll.app" target="_blank" rel="noopener" class="btn">Visit DharmaScroll &rarr;</a>
+                    </div>
+
+                    <div class="featured-visual">
+                        <div class="app-symbol">ॐ</div>
+                        <h4>DharmaScroll</h4>
+                        <p>Daily Wisdom from<br>Indian Scriptures</p>
+                        <div class="feature-tags">
+                            <span class="feature-tag">GPT-4</span>
+                            <span class="feature-tag">Gemini</span>
+                            <span class="feature-tag">Bhagavad Gita</span>
+                            <span class="feature-tag">Sanskrit</span>
+                            <span class="feature-tag">Spiritual AI</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── OpenClaw AI Assistant ─────────────────────────────── -->
+        <section id="openclaw">
+            <div class="openclaw-section">
+                <span class="oc-badge">VPS Hosted &mdash; Always On</span>
+                <h3>OpenClaw &mdash; AI Reminder &amp; Assistant Service</h3>
+                <p>OpenClaw is Blue Fog Technology's proprietary AI assistant service, hosted on a dedicated VPS for maximum reliability and uptime. It acts as an intelligent personal and business assistant — managing reminders, scheduling, and task coordination through natural language, available around the clock.</p>
+
+                <div class="oc-features">
+
+                    <div class="oc-feature">
+                        <div class="oc-icon">⏰</div>
+                        <h4>Smart Reminders</h4>
+                        <p>Set natural-language reminders and recurring alerts. OpenClaw understands context — "remind me every Monday morning" just works.</p>
+                    </div>
+
+                    <div class="oc-feature">
+                        <div class="oc-icon">📅</div>
+                        <h4>Intelligent Scheduling</h4>
+                        <p>AI-driven calendar and task scheduling that adapts to your priorities, deadlines, and working patterns automatically.</p>
+                    </div>
+
+                    <div class="oc-feature">
+                        <div class="oc-icon">🔗</div>
+                        <h4>System Integrations</h4>
+                        <p>Connects with your existing tools — email, messaging platforms, ticketing systems, and monitoring dashboards — for unified control.</p>
+                    </div>
+
+                    <div class="oc-feature">
+                        <div class="oc-icon">🛡️</div>
+                        <h4>Private &amp; Secure</h4>
+                        <p>Hosted on a dedicated VPS with full data isolation. Your business data never passes through shared third-party AI infrastructure.</p>
+                    </div>
+
+                    <div class="oc-feature">
+                        <div class="oc-icon">🌐</div>
+                        <h4>24/7 Availability</h4>
+                        <p>Always-on VPS deployment ensures OpenClaw is available at any hour — no downtime, no cold starts, no rate limits.</p>
+                    </div>
+
+                    <div class="oc-feature">
+                        <div class="oc-icon">🧩</div>
+                        <h4>Extensible &amp; Customisable</h4>
+                        <p>OpenClaw can be extended with custom plugins and workflows tailored to your specific operational requirements.</p>
+                    </div>
+
+                </div>
+
+                <div class="vps-note">
+                    <strong>Infrastructure note:</strong> OpenClaw runs on a self-managed Virtual Private Server (VPS), giving Blue Fog Technology full control over compute resources, latency, and data residency — a critical advantage for enterprise and regulated-industry clients.
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Why Choose Blue Fog for AI ───────────────────────── -->
+        <section id="why-us">
+            <div class="why-section">
+                <h2 class="section-title">Why Choose Blue Fog Technology for AI?</h2>
+                <p class="section-subtitle">We combine deep telecoms and service-provider expertise with modern AI engineering.</p>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <div class="why-icon">🏗️</div>
+                        <h4>Production-Ready Builds</h4>
+                        <p>Every solution is engineered for real-world deployment — not just proof-of-concept demos.</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🔒</div>
+                        <h4>Security First</h4>
+                        <p>VPS-hosted and on-premise options ensure your data stays within your control at all times.</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🔄</div>
+                        <h4>Integrated with Existing Systems</h4>
+                        <p>AI layers are designed to complement your current automation and orchestration stack.</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">📈</div>
+                        <h4>Scalable Architecture</h4>
+                        <p>Solutions scale from a single-user assistant to enterprise-grade multi-tenant deployments.</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🤝</div>
+                        <h4>End-to-End Partnership</h4>
+                        <p>From initial consultancy and design through to deployment, monitoring, and ongoing iteration.</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">⚡</div>
+                        <h4>Rapid Delivery</h4>
+                        <p>Agile development cycles mean you see working software quickly, with continuous improvement built in.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CTA ───────────────────────────────────────────────── -->
+        <div class="cta-strip">
+            <h3>Ready to Build Your AI Solution?</h3>
+            <p>Get in touch with our team to discuss your requirements and explore what AI can do for your business.</p>
+            <a href="index.html#contact" class="btn-white">Contact Us Today</a>
+        </div>
+
+    </div><!-- /.container -->
+
+    <!-- ── Footer ───────────────────────────────────────────────── -->
+    <footer>
+        <p>&copy; 2025 Blue Fog Technology. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
